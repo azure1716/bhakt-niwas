@@ -1,0 +1,355 @@
+.bhakta-page-wrapper {
+    padding: 60px 0 80px;
+    padding-top: 160px;
+    background: #fff0f0;
+}
+
+/* --- Header Section --- */
+.bhakta-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.bhakta-header .small-badge {
+    display: inline-block;
+    padding: 4px 18px;
+    border: 1px solid var(--theme-orange);
+    color: var(--theme-orange);
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.bhakta-header h1 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+}
+
+.bhakta-header p.subtitle {
+    /*max-width: 750px;*/
+    max-width: 1020px;
+    margin: 0 auto 30px auto;
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.bhakta-header .header-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.bhakta-header .header-buttons .btn-hero {
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.bhakta-header .header-buttons .btn-hero:hover {
+    transform: translateY(-3px);
+}
+
+/* --- Location Cards --- */
+.loc-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 30px;
+    height: 100%;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+.loc-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--theme-light-orange);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.loc-card .loc-title {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+}
+
+.loc-card .loc-subtitle {
+    color: var(--theme-orange);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.loc-card .loc-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.loc-card .loc-room-types {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.loc-card .loc-room-types strong {
+    color: var(--theme-maroon);
+    font-weight: 600;
+}
+
+.loc-card .loc-total-capacity {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.loc-card .loc-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.loc-card .loc-amenity-tag {
+    background: #f3f4f6;
+    color: #555;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #eaeaea;
+}
+
+.loc-card .loc-book-link {
+    margin-top: auto;
+    color: var(--theme-maroon);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+    transition: 0.3s;
+}
+
+.loc-card .loc-book-link:hover {
+    color: var(--theme-orange);
+    transform: translateX(4px);
+}
+
+/* --- How to Book Section --- */
+.how-to-book-wrapper {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 50px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.how-to-book-wrapper h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    margin-bottom: 40px;
+}
+
+.how-to-book-wrapper .step-item {
+    text-align: center;
+    padding: 15px;
+}
+
+.how-to-book-wrapper .step-number {
+    width: 45px;
+    height: 45px;
+    background: var(--theme-maroon);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin: 0 auto 10px auto;
+}
+
+.how-to-book-wrapper .step-item h5 {
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.how-to-book-wrapper .step-item p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.how-to-book-wrapper .btn-open-form {
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--theme-maroon);
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.how-to-book-wrapper .btn-open-form:hover {
+    background: #7a1510;
+    transform: translateY(-2px);
+}
+
+/* --- Booking Rules Section --- */
+.rules-wrapper {
+    margin-bottom: 60px;
+}
+
+.rules-wrapper h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.rule-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 25px;
+    height: 100%;
+    transition: 0.3s;
+    border-top: 3px solid var(--theme-orange);
+}
+
+.rule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.rule-card h5 {
+    color: var(--theme-maroon);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.rule-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- Custom FAQ Accordion --- */
+.faq-wrapper-custom {
+    /*max-width: 800px;*/
+    margin: 0 auto 50px auto;
+}
+
+.faq-wrapper-custom h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+details.faq-item-custom {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+details.faq-item-custom summary {
+    padding: 18px 20px;
+    font-weight: 600;
+    color: var(--theme-maroon);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 15px;
+}
+
+details.faq-item-custom summary::-webkit-details-marker {
+    display: none;
+}
+
+details.faq-item-custom summary::after {
+    content: "+";
+    color: var(--theme-orange);
+    font-size: 22px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+details.faq-item-custom[open] {
+    border-color: var(--theme-orange);
+    background: #fcfcfc;
+}
+
+details.faq-item-custom[open] summary::after {
+    transform: rotate(45deg);
+}
+
+details.faq-item-custom .faq-answer-custom {
+    padding: 0 20px 20px 20px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- Bottom Links Strip --- */
+.bottom-links-strip {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bottom-links-strip a {
+    color: var(--theme-maroon);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.bottom-links-strip a:hover {
+    color: var(--theme-orange);
+    text-decoration: underline;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .bhakta-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .how-to-book-wrapper {
+        padding: 30px 15px;
+    }
+}

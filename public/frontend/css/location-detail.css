@@ -1,0 +1,110 @@
+/* --- Hero Section --- */
+.loc-detail-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+.loc-detail-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 0;
+  color: #fff;
+}
+.loc-detail-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.loc-detail-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* --- Content Section --- */
+.loc-detail-section {
+  padding: 60px 0;
+}
+.loc-detail-section h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--theme-maroon);
+  margin-bottom: 20px;
+}
+.loc-detail-section p,
+.loc-detail-section li {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* --- Info Cards --- */
+.loc-info-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 25px;
+  height: auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+  transition: 0.3s;
+}
+.loc-info-card:hover {
+  border-color: var(--theme-orange);
+  transform: translateY(-3px);
+}
+.loc-info-card h5 {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.loc-info-card h5 i {
+  color: var(--theme-orange);
+}
+.loc-info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.loc-info-card ul li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+  display: flex;
+  justify-content: space-between;
+}
+.loc-info-card ul li:last-child {
+  border-bottom: none;
+}
+.loc-info-card ul li span {
+  font-weight: 500;
+  color: var(--theme-maroon);
+}
+
+/* --- Back Button --- */
+.loc-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--theme-maroon);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.loc-back-btn:hover {
+  color: var(--theme-orange);
+  transform: translateX(-4px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .loc-detail-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+  .loc-detail-title {
+    font-size: 2rem;
+  }
+}

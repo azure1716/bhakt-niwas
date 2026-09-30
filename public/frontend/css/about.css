@@ -1,0 +1,275 @@
+.about-wrapper {
+    padding: 60px 0 80px;
+    padding-top: 140px;
+    background: #fdfdfd;
+}
+
+/* --- Header --- */
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-header h1 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.about-header .subtitle {
+    font-size: 1.3rem;
+    color: #555;
+    font-weight: 400;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+
+/* --- Common Card Styling --- */
+.about-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    /* Sharp 4px corners */
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    height: 100%;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    border-color: var(--theme-light-orange);
+}
+
+/* --- History Card --- */
+.about-history-card {
+    border-left: 4px solid var(--theme-orange);
+    /* Accent left border */
+}
+
+.about-history-card h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    margin-bottom: 15px;
+}
+
+.about-history-card p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* --- Mission & Values Section --- */
+.about-mv-section {
+    margin-top: 40px;
+}
+
+.about-mv-section h4 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.about-mv-section p {
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-values-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-values-list li {
+    padding: 8px 0;
+    font-size: 1.05rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.about-values-list li:last-child {
+    border-bottom: none;
+}
+
+.about-values-list li i {
+    color: var(--theme-orange);
+    font-size: 12px;
+}
+
+/* --- Explore Guides Section --- */
+.about-guides-section {
+    margin-top: 60px;
+}
+
+.about-guides-title {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about-guides-desc {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.about-guide-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 25px;
+    height: 100%;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.about-guide-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--theme-light-orange);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.about-guide-meta {
+    font-size: 12px;
+    color: #999;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.about-guide-title {
+    font-weight: 600;
+    color: #222;
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.about-guide-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.about-guide-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.about-guide-tag {
+    background: var(--theme-maroon);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.about-guide-tag.orange {
+    background: var(--theme-orange);
+}
+
+.about-guide-read {
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.about-guide-read:hover {
+    color: var(--theme-orange);
+}
+
+.about-view-all {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-view-all a {
+    color: var(--theme-orange);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: 0.3s;
+    border-bottom: 1px solid transparent;
+}
+
+.about-view-all a:hover {
+    color: var(--theme-maroon);
+    border-bottom-color: var(--theme-maroon);
+}
+
+/* --- Learn More Section --- */
+.about-learn-section {
+    margin-top: 60px;
+}
+
+.about-learn-title {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about-learn-desc {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.about-learn-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-learn-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.about-learn-list li:last-child {
+    border-bottom: none;
+}
+
+.about-learn-list li a {
+    text-decoration: none;
+    color: var(--theme-orange);
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.about-learn-list li a:hover {
+    color: var(--theme-maroon);
+    transform: translateX(6px);
+}
+
+.about-learn-list li a i {
+    font-size: 14px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-card {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,56 @@
+.variant_row{
+        background: #faf9ff;
+    padding: 20px;
+}
+
+/* Table container ko fix karo */
+#basic-datatable_wrapper {
+    /*overflow: auto !important;*/
+    /*width: 100%;*/
+    /*max-width: 100%;*/
+    /*position: relative;*/
+}
+
+/* Row container */
+#basic-datatable_wrapper .row.dt-layout-table {
+    overflow: visible !important;
+    width: 100%;
+    margin: 0;
+}
+
+/* Column container */
+#basic-datatable_wrapper .col-12.dt-layout-full {
+    overflow: auto !important;
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+}
+
+/* Table styling */
+#basic-datatable {
+    width: 100% !important;
+    min-width: 800px; /* Table ki minimum width */
+    table-layout: auto;
+    white-space: nowrap; /* Text ko ek line mein rakhne ke liye */
+}
+
+/* Agar text wrap karna hai toh */
+#basic-datatable td {
+    white-space: nowrap; /* Wrap nahi hoga */
+    /* white-space: normal;  Wrap hoga */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Action column ko visible karo */
+#basic-datatable td.dtr-hidden,
+#basic-datatable th.dtr-hidden {
+    display: table-cell !important;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    #basic-datatable {
+        min-width: 600px; /* Mobile pe bhi scrollable rahega */
+    }
+}

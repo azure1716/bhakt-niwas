@@ -1,0 +1,393 @@
+.darshan-page-wrapper {
+    padding: 60px 0 80px;
+    padding-top: 150px;
+    background: #fdfdfd;
+}
+
+/* --- Header Section --- */
+.darshan-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.darshan-header .small-badge {
+    display: inline-block;
+    padding: 4px 18px;
+    color: var(--theme-orange);
+    border: 1px solid var(--theme-orange);
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.darshan-header h1 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+}
+
+.darshan-header p.subtitle {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.darshan-sub-title {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    text-align: center;
+    font-size: 2rem;
+    margin: 50px 0 30px 0;
+}
+
+/* --- Shegaon Schedule Cards --- */
+.darshan-schedule-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 40px 30px;
+    text-align: center;
+    height: 100%;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.darshan-schedule-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--theme-light-orange);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.darshan-schedule-card .icon {
+    font-size: 2.5rem;
+    color: var(--theme-orange);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.darshan-schedule-card h5 {
+    color: var(--theme-maroon);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.darshan-schedule-card .time {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+.darshan-schedule-card small {
+    color: #777;
+    font-size: 14px;
+    display: block;
+}
+
+.darshan-schedule-card .desc {
+    font-size: 13px;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* --- Mid-day Alert Box --- */
+.darshan-alert-box {
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 20px;
+    background: #fafafa;
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+/* --- Aarti Table --- */
+.darshan-table-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    background: #fff;
+}
+
+.darshan-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.darshan-table-wrapper thead {
+    background: var(--theme-maroon);
+    color: #fff;
+}
+
+.darshan-table-wrapper thead th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.darshan-table-wrapper tbody td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #444;
+}
+
+.darshan-table-wrapper tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.darshan-table-wrapper tbody tr:nth-child(even) {
+    background: #fcfcfc;
+}
+
+.darshan-table-wrapper .table-note {
+    font-size: 13px;
+    color: #888;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* --- Other Locations & Best Time Cards --- */
+.darshan-loc-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 25px;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.darshan-loc-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--theme-light-orange);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.darshan-loc-card h5 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    margin-bottom: 5px;
+}
+
+.darshan-loc-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.darshan-loc-card .loc-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--theme-orange);
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.darshan-loc-card .loc-link:hover {
+    color: var(--theme-maroon);
+    transform: translateX(4px);
+}
+
+.darshan-season-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 25px;
+    height: 100%;
+    transition: 0.3s;
+    text-align: center;
+    border-top: 3px solid var(--theme-orange);
+}
+
+.darshan-season-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.darshan-season-card .icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.darshan-season-card h5 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    margin-bottom: 5px;
+}
+
+.darshan-season-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.darshan-season-card .crowd {
+    display: block;
+    margin-top: 10px;
+    color: var(--theme-orange);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* --- Custom FAQ Accordion --- */
+.darshan-faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+details.darshan-faq-item {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+details.darshan-faq-item summary {
+    padding: 18px 20px;
+    font-weight: 600;
+    color: var(--theme-maroon);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 15px;
+}
+
+details.darshan-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+details.darshan-faq-item summary::after {
+    content: "+";
+    color: var(--theme-orange);
+    font-size: 22px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+details.darshan-faq-item[open] {
+    border-color: var(--theme-orange);
+    background: #fcfcfc;
+}
+
+details.darshan-faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+details.darshan-faq-item .faq-answer {
+    padding: 0 20px 20px 20px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- Bottom CTA Box --- */
+.darshan-cta-box {
+    background: #faf7f2;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.darshan-cta-box h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--theme-maroon);
+    margin-bottom: 10px;
+}
+
+.darshan-cta-box p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.darshan-cta-box .darshan-cta-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    margin: 0 8px;
+}
+
+.darshan-cta-box .btn-primary-cta {
+    background: var(--theme-maroon);
+    color: #fff;
+}
+
+.darshan-cta-box .btn-primary-cta:hover {
+    background: #7a1510;
+    transform: translateY(-2px);
+}
+
+.darshan-cta-box .btn-outline-cta {
+    background: transparent;
+    border: 2px solid var(--theme-maroon);
+    color: var(--theme-maroon);
+}
+
+.darshan-cta-box .btn-outline-cta:hover {
+    background: var(--theme-maroon);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --- Bottom Links Strip --- */
+.darshan-bottom-links {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 30px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.darshan-bottom-links a {
+    color: var(--theme-maroon);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.darshan-bottom-links a:hover {
+    color: var(--theme-orange);
+    text-decoration: underline;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .darshan-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .darshan-schedule-card .time {
+        font-size: 1.8rem;
+    }
+
+    .darshan-cta-box .darshan-cta-btn {
+        display: block;
+        margin: 8px auto;
+        width: 80%;
+    }
+}
