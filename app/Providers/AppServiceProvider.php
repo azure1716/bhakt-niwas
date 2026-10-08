@@ -24,6 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Enforce HTTPS URLs for all assets and routes in production or HTTPS deployments
+        if (app()->environment('production') || str_starts_with(config('app.url', ''), 'https://')) {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+
         Paginator::useBootstrapFive();
 
         // 2. Footer Blogs को Globally Share करें (हर View में उपलब्ध)
