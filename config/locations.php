@@ -1,0 +1,216 @@
+<?php
+
+/**
+ * Location Data Configuration
+ *
+ * Single source of truth for all Bhakta Niwas location data.
+ * Used across location pages, schemas, and sitemap generation.
+ */
+
+return [
+
+    [
+        'id'          => 1,
+        'slug'        => 'shegaon-bhakta-niwas',
+        'legacy_slug' => 'shegaon-bhakt-niwas',
+        'name'        => 'Shri Gajanan Maharaj Sansthan Shegaon Bhakta Niwas',
+        'short_name'  => 'Shegaon Bhakta Niwas',
+        'city'        => 'Shegaon',
+        'state'       => 'Maharashtra',
+        'address'     => 'Near Shri Gajanan Maharaj Temple, Shegaon, Dist. Buldhana, Maharashtra - 444203',
+        'geo'         => [
+            'latitude'  => 20.7942,
+            'longitude' => 76.6990,
+        ],
+        'landmark'    => 'Adjacent to Shri Gajanan Maharaj Temple main gate',
+        'distance_from_station' => 'Short bus or auto ride from Shegaon Railway Station',
+        'distance_from_temple'  => 'Walking distance from Shri Gajanan Maharaj Temple',
+        'hero_title'  => 'Shegaon Bhakta Niwas',
+        'hero_subtitle' => 'Shri Gajanan Maharaj Sansthan - Official Accommodation',
+        'hero_tag'    => 'Official accommodation for devotees visiting Shri Gajanan Maharaj Temple',
+        'image'       => 'loc2.jpg',
+        'description' => 'The main Bhakta Niwas complex for devotees visiting Shri Gajanan Maharaj Temple at Shegaon. Operated directly by Shri Gajanan Maharaj Sansthan since 1908, the complex provides clean, comfortable and affordable accommodation steps away from the temple samadhi.',
+        'facilities'  => [
+            'Hot Water (Morning)',
+            'Free Bus Service from Railway Station',
+            'Mahaprasad Canteen (Bhojan Kaksha)',
+            'Parking Facility',
+            'Clean Bathrooms',
+        ],
+        'rooms'       => [
+            ['Common Hall (Dormitory)', '50 Persons', 'Non-AC', 'Nominal Donation'],
+            ['Double Bed Room', '3 Persons', 'Non-AC', 'Nominal Donation'],
+            ['Deluxe Room', '3 Persons', 'AC', 'Nominal Donation'],
+        ],
+        'search_term' => 'Shegaon',
+        'priority'    => 1.0,
+    ],
+
+    [
+        'id'          => 2,
+        'slug'        => 'pandharpur-bhakta-niwas',
+        'legacy_slug' => 'pandharpur',
+        'name'        => 'Shri Gajanan Maharaj Sansthan Pandharpur Bhakta Niwas',
+        'short_name'  => 'Pandharpur Bhakta Niwas',
+        'city'        => 'Pandharpur',
+        'state'       => 'Maharashtra',
+        'address'     => 'Near Vitthal Temple Complex, Pandharpur, Dist. Solapur, Maharashtra - 413304',
+        'geo'         => [
+            'latitude'  => 17.6810,
+            'longitude' => 75.3318,
+        ],
+        'landmark'    => 'Near Vitthal Rukmini Temple, Pandharpur',
+        'distance_from_station' => 'Convenient access from Pandharpur Railway Station',
+        'distance_from_temple'  => 'Short distance from Vitthal Rukmini Temple',
+        'hero_title'  => 'Pandharpur Bhakta Niwas',
+        'hero_subtitle' => 'Shri Gajanan Maharaj Sansthan',
+        'hero_tag'    => 'Devotee accommodation near Vitthal Rukmini Temple Pandharpur',
+        'image'       => 'location1.jpg',
+        'description' => 'Bhakta Niwas accommodation for devotees visiting Lord Vitthal at Pandharpur. A large complex run by Shri Gajanan Maharaj Sansthan, serving pilgrims on the Wari route and those attending Ashadhi and Kartiki Ekadashi.',
+        'facilities'  => [
+            'Bhojan Kaksha (Dining Hall)',
+            'Hot Water',
+            'Parking Facility',
+        ],
+        'rooms'       => [
+            ['Standard Room', '4 Persons', 'Non-AC', 'Nominal Donation'],
+            ['Dormitory Hall', '20 Persons', 'Non-AC', 'Nominal Donation'],
+        ],
+        'search_term' => 'Pandharpur',
+        'priority'    => 0.8,
+    ],
+
+    [
+        'id'          => 3,
+        'slug'        => 'shegaon-anand-vihar',
+        'legacy_slug' => 'shegaon-anand-vihar',
+        'name'        => 'Shri Gajanan Maharaj Sansthan Shegaon Anand Vihar',
+        'short_name'  => 'Shegaon Anand Vihar',
+        'city'        => 'Shegaon',
+        'state'       => 'Maharashtra',
+        'address'     => 'Near Anand Sagar, Shegaon, Dist. Buldhana, Maharashtra - 444203',
+        'geo'         => [
+            'latitude'  => 20.7950,
+            'longitude' => 76.7005,
+        ],
+        'landmark'    => 'Adjacent to Anand Sagar spiritual park, Shegaon',
+        'distance_from_station' => 'Short drive from Shegaon Railway Station',
+        'distance_from_temple'  => 'Short distance from main temple complex',
+        'hero_title'  => 'Shegaon Anand Vihar',
+        'hero_subtitle' => 'Shri Gajanan Maharaj Sansthan',
+        'hero_tag'    => 'Premium accommodation near Anand Sagar spiritual park, Shegaon',
+        'image'       => 'loc3.jpg',
+        'description' => 'A premium accommodation complex located next to Anand Sagar, the world-famous spiritual and recreational park developed by Shri Gajanan Maharaj Sansthan. Ideal for families who want to combine temple darshan with a visit to Anand Sagar.',
+        'facilities'  => [
+            'Air Conditioning',
+            'Garden View Rooms',
+            'Canteen',
+            'Parking Facility',
+        ],
+        'rooms'       => [
+            ['AC Room', '3 Persons', 'AC', 'Nominal Donation'],
+            ['Family Suite', '4 Persons', 'AC', 'Nominal Donation'],
+        ],
+        'search_term' => 'Anand Vihar',
+        'priority'    => 0.8,
+    ],
+
+    [
+        'id'          => 4,
+        'slug'        => 'shegaon-visawa',
+        'legacy_slug' => 'shegaon-visawa',
+        'name'        => 'Shri Gajanan Maharaj Sansthan Shegaon Visawa',
+        'short_name'  => 'Shegaon Visawa',
+        'city'        => 'Shegaon',
+        'state'       => 'Maharashtra',
+        'address'     => 'Near Shegaon Railway Station, Shegaon, Dist. Buldhana, Maharashtra - 444203',
+        'geo'         => [
+            'latitude'  => 20.7920,
+            'longitude' => 76.6975,
+        ],
+        'landmark'    => 'Near Shegaon Railway Station exit',
+        'distance_from_station' => 'Short walking distance from Shegaon Railway Station',
+        'distance_from_temple'  => 'Short shuttle ride to main temple',
+        'hero_title'  => 'Shegaon Visawa',
+        'hero_subtitle' => 'Shri Gajanan Maharaj Sansthan',
+        'hero_tag'    => 'Convenient accommodation near Shegaon Railway Station',
+        'image'       => 'loc2.jpg',
+        'description' => 'Conveniently located near Shegaon Railway Station, Visawa is the first Sansthan property that arriving train travellers encounter. Ideal for devotees who arrive late or depart early.',
+        'facilities'  => [
+            'Parking Facility',
+            'Canteen',
+        ],
+        'rooms'       => [
+            ['Standard Room', '3 Persons', 'Non-AC', 'Nominal Donation'],
+        ],
+        'search_term' => 'Visawa',
+        'priority'    => 0.7,
+    ],
+
+    [
+        'id'          => 5,
+        'slug'        => 'trimbakeshwar-bhakta-niwas',
+        'legacy_slug' => 'trimbakeshwar',
+        'name'        => 'Shri Gajanan Maharaj Sansthan Trimbakeshwar Bhakta Niwas',
+        'short_name'  => 'Trimbakeshwar Bhakta Niwas',
+        'city'        => 'Trimbakeshwar',
+        'state'       => 'Maharashtra',
+        'address'     => 'Near Trimbakeshwar Jyotirlinga Temple, Dist. Nashik, Maharashtra - 422212',
+        'geo'         => [
+            'latitude'  => 19.9331,
+            'longitude' => 73.5297,
+        ],
+        'landmark'    => 'Near Kushavarta Kund and Trimbakeshwar Jyotirlinga',
+        'distance_from_station' => 'Accessible via road from Nashik Road Railway Station',
+        'distance_from_temple'  => 'Walking distance from Trimbakeshwar Temple',
+        'hero_title'  => 'Trimbakeshwar Bhakta Niwas',
+        'hero_subtitle' => 'Shri Gajanan Maharaj Sansthan',
+        'hero_tag'    => 'Devotee accommodation near Trimbakeshwar Jyotirlinga and Kushavarta Kund',
+        'image'       => 'SansthanTrimbakeshwar.png',
+        'description' => 'Accommodation for devotees visiting the Trimbakeshwar Jyotirlinga, one of the 12 Jyotirlingas and the source of the sacred Godavari river. Operated by Shri Gajanan Maharaj Sansthan to serve pilgrims from across India.',
+        'facilities'  => [
+            'Parking Facility',
+            'Satvik Bhojan (Vegetarian Meals)',
+            'Hot Water',
+        ],
+        'rooms'       => [
+            ['Standard Room', '3 Persons', 'Non-AC', 'Nominal Donation'],
+        ],
+        'search_term' => 'Trimbakeshwar',
+        'priority'    => 0.7,
+    ],
+
+    [
+        'id'          => 6,
+        'slug'        => 'omkareshwar-bhakta-niwas',
+        'legacy_slug' => 'omkareshwar',
+        'name'        => 'Shri Gajanan Maharaj Sansthan Omkareshwar Bhakta Niwas',
+        'short_name'  => 'Omkareshwar Bhakta Niwas',
+        'city'        => 'Omkareshwar',
+        'state'       => 'Madhya Pradesh',
+        'address'     => 'Near Omkareshwar Jyotirlinga Temple, Dist. Khandwa, Madhya Pradesh - 450554',
+        'geo'         => [
+            'latitude'  => 22.2390,
+            'longitude' => 76.1511,
+        ],
+        'landmark'    => 'Near Omkareshwar Jyotirlinga and Narmada ghats',
+        'distance_from_station' => 'Accessible via road from Indore or Khandwa',
+        'distance_from_temple'  => 'Short distance from Omkareshwar Jyotirlinga',
+        'hero_title'  => 'Omkareshwar Bhakta Niwas',
+        'hero_subtitle' => 'Shri Gajanan Maharaj Sansthan',
+        'hero_tag'    => 'Pilgrimage accommodation near Omkareshwar Jyotirlinga and Narmada',
+        'image'       => 'SansthanOmkareshwar.png',
+        'description' => 'Accommodation for devotees visiting Omkareshwar Jyotirlinga on the Narmada river island. Shri Gajanan Maharaj Sansthan serves pilgrims visiting this sacred Jyotirlinga in Madhya Pradesh.',
+        'facilities'  => [
+            'Parking Facility',
+            'Satvik Bhojan',
+            'Hot Water',
+        ],
+        'rooms'       => [
+            ['Standard Room', '3 Persons', 'Non-AC', 'Nominal Donation'],
+        ],
+        'search_term' => 'Omkareshwar',
+        'priority'    => 0.7,
+    ],
+
+];

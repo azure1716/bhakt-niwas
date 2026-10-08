@@ -14,13 +14,13 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('short_description')->nullable();
+            $table->text('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->string('image')->nullable();
 
-            // Categories और Topics यहाँ Text/JSON में स्टोर होंगे
-            $table->text('categories')->nullable();
-            $table->text('topics')->nullable();
+            // Categories and Topics stored as JSON for cross-database compatibility (MySQL & PostgreSQL json/jsonb)
+            $table->json('categories')->nullable();
+            $table->json('topics')->nullable();
 
             $table->string('related_sansthan_location')->nullable();
             $table->string('related_sansthan_link')->nullable();

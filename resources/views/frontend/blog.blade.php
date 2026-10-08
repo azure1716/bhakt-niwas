@@ -1,10 +1,7 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
-
-@section('content')
+@push('page-css')
+    <link rel="stylesheet" href="{{ asset('frontend/css/blog.css') }}">
     <style>
         /* --- Banner --- */
         .blog-hero-banner {
@@ -34,17 +31,39 @@
 
         /* Active state for category pills */
         .blog-cat-pill.active {
-            background: var(--theme-maroon);
+            background: var(--theme-maroon, #800000);
             color: #fff;
-            border-color: var(--theme-maroon);
+            border-color: var(--theme-maroon, #800000);
             transform: translateY(-2px);
         }
 
         .blog-cat-pill.active span {
             color: #fff;
         }
-    </style>
 
+        .blog-card-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 4px 4px 0 0;
+            background-color: #f4f4f4;
+            margin-bottom: 15px;
+        }
+
+        .blog-card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-card-img-wrapper img {
+            transform: scale(1.05);
+        }
+    </style>
+@endpush
+
+@section('content')
     <!-- ========================================= -->
     <!-- Banner Section                           -->
     <!-- ========================================= -->
@@ -110,41 +129,59 @@
                 </h4>
                 <div class="row g-4">
                     @forelse($blogs as $blog)
+                        @php
+                            // Normalize categories & topics safely
+                            $cats = is_array($blog->categories) ? $blog->categories : (is_string($blog->categories) ? json_decode($blog->categories, true) ?? explode(',', $blog->categories) : []);
+                            $topcs = is_array($blog->topics) ? $blog->topics : (is_string($blog->topics) ? json_decode($blog->topics, true) ?? explode(',', $blog->topics) : []);
+                            $cats = array_filter(array_map('trim', (array)$cats));
+                            $topcs = array_filter(array_map('trim', (array)$topcs));
+                            $imgSrc = !empty($blog->image) ? asset($blog->image) : asset('frontend/images/loc2.jpg');
+                        @endphp
                         <div class="col-lg-4 col-md-6">
-                            <div class="blog-card">
+                            <div class="blog-card d-flex flex-column h-100">
+                                <div class="blog-card-img-wrapper">
+                                    <a href="{{ route('blog.detail', $blog->slug) }}">
+                                        <img src="{{ $imgSrc }}" alt="{{ $blog->title }}" loading="lazy" />
+                                    </a>
+                                </div>
+
                                 <div class="blog-meta">
-                                    <i class="far fa-calendar-alt"></i>
+                                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
                                     {{ \Carbon\Carbon::parse($blog->published_date)->format('M d, Y') }} •
-                                    <i class="far fa-clock"></i> 2 min read
+                                    <i class="far fa-clock" aria-hidden="true"></i> 2 min read
                                 </div>
-                                <div class="blog-title">
-                                    {{ $blog->title }}
-                                </div>
-                                <p class="blog-desc">
-                                    {{ \Illuminate\Support\Str::limit($blog->short_description, 80) }}
+
+                                <h3 class="blog-title" style="font-size: 1.1rem; font-weight: 600; line-height: 1.4;">
+                                    <a href="{{ route('blog.detail', $blog->slug) }}" style="color: #222; text-decoration: none;">
+                                        {{ $blog->title }}
+                                    </a>
+                                </h3>
+
+                                <p class="blog-desc" style="flex-grow: 1;">
+                                    {{ \Illuminate\Support\Str::limit(strip_tags($blog->short_description ?? $blog->description), 100) }}
                                 </p>
+
                                 <div class="blog-tags">
                                     {{-- Categories --}}
-                                    @if (!empty($blog->categories) && is_array($blog->categories))
-                                        @foreach (array_slice($blog->categories, 0, 2) as $cat)
-                                            <span class="blog-tag">{{ $cat }}</span>
-                                        @endforeach
-                                    @endif
+                                    @foreach (array_slice($cats, 0, 2) as $cat)
+                                        <span class="blog-tag">{{ $cat }}</span>
+                                    @endforeach
 
                                     {{-- Topics --}}
-                                    @if (!empty($blog->topics) && is_array($blog->topics))
-                                        @foreach (array_slice($blog->topics, 0, 1) as $topic)
-                                            <span class="blog-tag orange">{{ $topic }}</span>
-                                        @endforeach
-                                    @endif
+                                    @foreach (array_slice($topcs, 0, 1) as $topic)
+                                        <span class="blog-tag orange">{{ $topic }}</span>
+                                    @endforeach
 
-                                    @if ((!empty($blog->categories) && count($blog->categories) > 2) || (!empty($blog->topics) && count($blog->topics) > 1))
+                                    @if (count($cats) > 2 || count($topcs) > 1)
                                         <span class="blog-tag" style="background: #e5e7eb; color: #333">+ more</span>
                                     @endif
                                 </div>
-                                <a href="{{ route('blog.detail', $blog->slug) }}" class="blog-read">
-                                    Read More <i class="fas fa-arrow-right"></i>
-                                </a>
+
+                                <div class="mt-auto pt-2">
+                                    <a href="{{ route('blog.detail', $blog->slug) }}" class="blog-read">
+                                        Read More <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     @empty

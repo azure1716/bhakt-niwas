@@ -1,7 +1,8 @@
 @extends('frontend.layouts.master')
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
+
+@push('page-css')
+    <link rel="stylesheet" href="{{ asset('frontend/css/location.css') }}">
+@endpush
 
 @section('content')
     <div class="wrapper" style="background: #fff0f0">
@@ -31,7 +32,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'shegaon-bhakt-niwas']) }}" class="btn-explore">Discover <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Shegaon."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Shegaon.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>
@@ -51,7 +52,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'pandharpur']) }}" class="btn-explore">Discover <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Pandharpur."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Pandharpur.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>
@@ -71,7 +72,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'shegaon-anand-vihar']) }}" class="btn-explore">Discover <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Anand%20Vihar."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Anand%20Vihar.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>
@@ -88,7 +89,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'shegaon-visawa']) }}" class="btn-explore">Discover <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Visawa."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Visawa.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>
@@ -105,7 +106,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'trimbakeshwar']) }}" class="btn-explore">Discover <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Trimbakeshwar."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Trimbakeshwar.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>
@@ -122,7 +123,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'omkareshwar']) }}" class="btn-explore">Discover <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Omkareshwar."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Omkareshwar.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>

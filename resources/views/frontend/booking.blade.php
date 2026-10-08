@@ -1,8 +1,8 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
+@push('page-css')
+    <link rel="stylesheet" href="{{ asset('frontend/css/booking.css') }}">
+@endpush
 
 @section('content')
     <!-- ========================================================== -->
@@ -125,7 +125,7 @@
                             </h6>
                             <p>Get real‑time confirmation and room updates.</p>
                         </div>
-                        <a href="https://wa.me/919523016487?text=Hi%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan."
+                        <a href="{{ seo_whatsapp_url('Hi%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan.') }}"
                             target="_blank" class="btn-action-mini btn-wa-action">Start Chat</a>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                             </h6>
                             <p>Speak directly with our support team.</p>
                         </div>
-                        <a href="tel:+919523016487" class="btn-action-mini btn-call-action">Call Us</a>
+                        <a href="{{ seo_phone_tel() }}" class="btn-action-mini btn-call-action">Call Us</a>
                     </div>
                 </div>
             </div>
@@ -399,7 +399,7 @@
             message += `*Phone:* ${phone || 'Not specified'}`;
 
             // 4. Open WhatsApp with the predefined number
-            const waNumber = "919523016487";
+            const waNumber = "{{ seo_phone() }}";
             const waUrl = `https://wa.me/${waNumber}?text=${message}`;
 
             window.open(waUrl, '_blank');

@@ -1,8 +1,8 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
+@push('page-css')
+    <link rel="stylesheet" href="{{ asset('frontend/css/about.css') }}">
+@endpush
 
 @section('content')
     <div class="about-wrapper">

@@ -1,11 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
+@push('page-css')
+    <link rel="stylesheet" href="{{ asset('frontend/css/darshan.css') }}">
+@endpush
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('frontend/css/darshan.css') }}">
 
     <div class="darshan-page-wrapper">
         <div class="container">
@@ -23,6 +22,7 @@
             <!-- Shegaon Temple Darshan Schedule -->
             <section>
                 <h2 class="darshan-sub-title" style="margin-top: 0;">Shegaon Temple – Darshan Hours</h2>
+                @if(fact('darshan_timings'))
                 <div class="row g-4">
                     <div class="col-lg-6">
                         <div class="darshan-schedule-card">
@@ -49,11 +49,21 @@
                     The temple remains closed for a midday break from <strong>12:00 PM to 4:00 PM</strong>. During this time,
                     devotees can enjoy Mahaprasad at the canteen.
                 </div>
+                @else
+                <div class="text-center p-4 rounded my-4" style="background: #fff8f0; border: 1px solid #fed7aa;">
+                    <h4 style="color: #800000; font-weight: 600;" class="mb-2">Daily Darshan &amp; Aarti Schedules</h4>
+                    <p class="mb-3">Temple darshan is open daily for devotees at Shegaon. Daily aarti timings and festival schedules are managed by the Sansthan. Please contact our helpline for today's schedule and guidance.</p>
+                    <a href="{{ seo_whatsapp_url('Hi, I would like to inquire about darshan timings at Shegaon.') }}" target="_blank" class="btn btn-orange px-4 py-2" onclick="if(window.trackWhatsApp) window.trackWhatsApp()">
+                        <i class="fab fa-whatsapp me-2"></i> Inquire Darshan Timings on WhatsApp
+                    </a>
+                </div>
+                @endif
             </section>
 
             <!-- Daily Aarti Schedule -->
             <section>
-                <h2 class="darshan-sub-title">Daily Aarti Timings</h2>
+                @if(fact(\'darshan_timings\'))
+<h2 class="darshan-sub-title">Daily Aarti Timings</h2>
                 <div class="darshan-table-wrapper">
                     <table>
                         <thead>
@@ -89,13 +99,15 @@
                 </div>
                 <div class="table-note">
                     Timings are approximate and may shift on festival days. Please confirm with the office at
-                    <strong>+919523016487</strong> before your visit.
+                    <strong>{{ seo_phone_display() }}</strong> before your visit.
                 </div>
-            </section>
+            
+@endif
 
             <!-- Darshan Timings at Other Locations -->
             <section>
-                <h2 class="darshan-sub-title">Darshan at Other Sansthan Centres</h2>
+                @if(fact(\'darshan_timings\'))
+<h2 class="darshan-sub-title">Darshan at Other Sansthan Centres</h2>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
                         <div class="darshan-loc-card">
@@ -125,7 +137,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            
+@endif
 
             <!-- Best Time to Visit -->
             <section>

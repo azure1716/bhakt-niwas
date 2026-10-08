@@ -1,8 +1,5 @@
-@extends('frontend.layouts.master')
+﻿@extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
 
 @section('content')
     <style>
@@ -257,7 +254,7 @@
                 <p>
                     If you have any questions, concerns, or requests regarding this Privacy Commitment, please <a href="{{ route('contact') }}"
                         class="policy-email-link">get in touch with us</a> or call:
-                    <br><strong>Phone:</strong> <a href="tel:+919523016487" class="policy-email-link">+919523016487</a>
+                    <br><strong>Phone:</strong> <a href="{{ seo_phone_tel() }}" class="policy-email-link">{{ seo_phone_display() }}</a>
                 </p>
 
                 <!-- Related Pages -->

@@ -1,8 +1,8 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
+@push('page-css')
+    <link rel="stylesheet" href="{{ asset('frontend/css/location-detail.css') }}">
+@endpush
 
 @section('content')
 
@@ -445,7 +445,7 @@
                         <!-- Book Accommodation Card -->
                         <div class="loc-sidebar-card">
                             <h5>Reserve Your Stay</h5>
-                            <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20{{ urlencode($location['name']) }}."
+                            <a href="{{ seo_whatsapp_url('Hi, I would like to book accommodation at ' . $location['name'] . '.') }}"
                                 target="_blank" class="loc-btn-sidebar-wa">
                                 <i class="fab fa-whatsapp me-2"></i> Book via WhatsApp
                             </a>
@@ -460,7 +460,7 @@
                             <h5>Reach Our Team</h5>
                             <div style="display: flex; align-items: center; gap: 10px; font-size: 15px; color: #333;">
                                 <i class="fab fa-whatsapp" style="color: var(--theme-green); font-size: 18px;"></i>
-                                <span style="font-weight: 500;">919523016487</span>
+                                <span style="font-weight: 500;">{{ seo_phone_display() }}</span>
                             </div>
                         </div>
 

@@ -1,8 +1,5 @@
-@extends('frontend.layouts.master')
+﻿@extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
 
 @section('content')
     <style>
@@ -246,7 +243,7 @@
                 <p>
                     For any questions, refund requests, or cancellation assistance, please <a href="{{ route('contact') }}"
                         class="refund-inline-link">contact our team</a> or call:
-                    <br><strong>Phone:</strong> <a href="tel:+919523016487" class="refund-inline-link">+919523016487</a>
+                    <br><strong>Phone:</strong> <a href="{{ seo_phone_tel() }}" class="refund-inline-link">{{ seo_phone_display() }}</a>
                 </p>
 
                 <!-- Related Pages -->

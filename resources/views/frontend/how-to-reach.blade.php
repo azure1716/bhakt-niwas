@@ -1,8 +1,5 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
 
 @section('content')
     <style>
@@ -433,7 +430,8 @@
             <!-- Header -->
             <section class="reach-header">
                 <span class="small-badge">Travel Guide</span>
-                <h1 style=" text-align:start;">How to Get the Shegaon | Complete Travel Guide</h1>
+                <h1 style=" text-align:start;">How to Reach Shegaon | Complete Travel Guide</h1>
+
                 <!--<p class="subtitle">-->
                 <!--    A complete travel companion for visiting Shri Gajanan Maharaj Sansthan – by rail, road, or air. -->
                 <!--    Enjoy a free shuttle from Shegaon Railway Station directly to the temple.-->
@@ -568,7 +566,7 @@
                 <div class="reach-alert-box">
                     <strong><i class="fas fa-bus me-2"></i> Complimentary Shuttle from the Station</strong>
                     <span>The Sansthan provides a <b>free bus</b> between Shegaon Railway Station and the temple premises. 
-                    Just look for the Sansthan bus at the station’s main exit. It runs frequently throughout the day.</span>
+                    Just look for the Sansthan bus at the station’s main exit. The bus service is provided for devotees arriving by train.</span>
                 </div>
             </section>
 
@@ -699,16 +697,16 @@
                         Dist. Buldhana, Maharashtra - 444203
                     </p>
                     <div class="booking-helpline">
-                        Booking Helpline: <a href="tel:+918603790855"
-                            style="text-decoration: none; color: var(--theme-maroon);">+918603790855</a>
+                        Booking Helpline: <a href="tel:{{ config('seo.phone') }}"
+                            style="text-decoration: none; color: var(--theme-maroon);">{{ config('seo.phone') }}</a>
                     </div>
                     <div class="mt-3">
-                        <a href="https://wa.me/918603790855?text=Hi%2C%20I%20need%20help%20with%20directions%20and%20booking."
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', config('seo.phone')) }}?text=Hi%2C%20I%20need%20help%20with%20directions%20and%20booking."
                             target="_blank" class="darshan-cta-btn btn-wa-cta"><i class="fab fa-whatsapp me-2"></i> WhatsApp
                             Booking</a>
                         <a href="{{ route('booking') }}" class="darshan-cta-btn btn-primary-cta"><i
                                 class="fas fa-paper-plane me-2"></i> Send Booking Request</a>
-                        <a href="tel:+918603790855" class="darshan-cta-btn btn-primary-cta"
+                        <a href="tel:{{ config('seo.phone') }}" class="darshan-cta-btn btn-primary-cta"
                             style="background: var(--theme-orange);"><i class="fas fa-phone me-2"></i> Call to Book</a>
                     </div>
                 </div>
@@ -758,7 +756,7 @@
 
                 <details class="reach-faq-item">
                     <summary>Is parking available at the Bhakta Niwas?</summary>
-                    <div class="faq-answer">Yes, there is ample free parking for both two‑wheelers and four‑wheelers at the Shegaon Bhakta Niwas and the main temple complex.</div>
+                    <div class="faq-answer">Yes, parking facility is available at the Sansthan premises for devotees arriving by private vehicles. Contact the booking office for details.</div>
                 </details>
 
                 <details class="reach-faq-item">

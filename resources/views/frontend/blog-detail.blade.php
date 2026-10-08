@@ -1,21 +1,36 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
-
 @section('content')
 
-    <!-- Hero Section with Featured Image -->
-    <section class="bd-hero-section" style="background-image: url('{{ asset($blog->image ?? 'frontend/images/temple1.jpg') }}');">
+@push('page-css')
+<link rel="stylesheet" href="{{ asset('frontend/css/blog-detail.css') }}">
+@endpush
+
+
+    <!-- Hero Section: LCP image as proper <img> for alt text and crawlability -->
+    <section class="bd-hero-section bd-hero-section--with-img">
+        @if ($blog->image)
+        <img
+            src="{{ asset($blog->image) }}"
+            alt="{{ $blog->title }}"
+            class="bd-hero-bg-img"
+            width="1200"
+            height="400"
+            fetchpriority="high"
+            loading="eager"
+        />
+        @endif
         <div class="container">
             <div class="bd-hero-content">
                 <h1>{{ $blog->title }}</h1>
                 <div class="bd-hero-meta">
-                    <span><i class="far fa-calendar-alt"></i>
-                        {{ \Carbon\Carbon::parse($blog->published_date)->format('M d, Y') }}</span>
-                    <span><i class="far fa-clock"></i> Reading time: 2 min</span>
-                    <span><i class="fas fa-user"></i> By Editorial Team</span>
+                    <span><i class="far fa-calendar-alt" aria-hidden="true"></i>
+                        <time datetime="{{ \Carbon\Carbon::parse($blog->published_date)->toDateString() }}">
+                        {{ \Carbon\Carbon::parse($blog->published_date)->format('M d, Y') }}
+                        </time>
+                    </span>
+                    <span><i class="far fa-clock" aria-hidden="true"></i> {{ $readingTime }} min read</span>
+                    <span><i class="fas fa-building" aria-hidden="true"></i> Shri Gajanan Maharaj Sansthan</span>
                 </div>
             </div>
         </div>
@@ -56,11 +71,11 @@
                                 Reach Us Instantly
                             </h5>
                             <div class="bd-sidebar-btn-group">
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20read%20your%20article%20and%20want%20to%20know%20more%20about%20accommodation."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20read%20your%20article%20and%20want%20to%20know%20more%20about%20accommodation.') }}"
                                     target="_blank" class="bd-sidebar-btn bd-btn-wa">
                                     <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                                 </a>
-                                <a href="tel:+919523016487" class="bd-sidebar-btn bd-btn-call">
+                                <a href="{{ seo_phone_tel() }}" class="bd-sidebar-btn bd-btn-call">
                                     <i class="fas fa-phone"></i> Call Now
                                 </a>
                             </div>
@@ -183,7 +198,8 @@
             finalMessage += `*Phone:* ${phone}%0A%0A`;
             finalMessage += `*Message:* ${message || 'No additional details provided.'}`;
 
-            const whatsappNumber = "919523016487";
+            const whatsappNumber = "{{ preg_replace('/[^0-9]/', '', config('seo.phone')) }}";
+
             const waUrl = `https://wa.me/${whatsappNumber}?text=${finalMessage}`;
             window.open(waUrl, '_blank');
         }

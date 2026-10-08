@@ -1,11 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
+@push('page-css')
+    <link rel="stylesheet" href="{{ asset('frontend/css/contact.css') }}">
+@endpush
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('frontend/css/contact.css') }}">
 
     <!-- ========================================================== -->
     <!-- === CONTACT PAGE – ORIGINAL CONTENT + SEO ================= -->
@@ -47,16 +46,16 @@
                         <h5>Reach Us</h5>
                         <p>
                             <strong style="color: var(--theme-orange); font-weight: 700">
-                                <i class="fas fa-phone me-1"></i> +919523016487
+                                <i class="fas fa-phone me-1"></i> {{ seo_phone_display() }}
                             </strong>
                             <br />
                             For all booking queries and general assistance (WhatsApp / Call)
                         </p>
                         <div class="d-flex flex-wrap gap-2">
-                            <a href="https://wa.me/919523016487" target="_blank" class="ct-contact-link">
+                            <a href="{{ seo_whatsapp_url() }}" target="_blank" class="ct-contact-link">
                                 <i class="fab fa-whatsapp"></i> Message on WhatsApp
                             </a>
-                            <a href="tel:+919523016487" class="ct-contact-link ct-call-link">
+                            <a href="{{ seo_phone_tel() }}" class="ct-contact-link ct-call-link">
                                 <i class="fas fa-phone"></i> Call Us
                             </a>
                         </div>

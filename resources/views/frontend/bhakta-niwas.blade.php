@@ -1,11 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
+@push('page-css')
+    <link rel="stylesheet" href="{{ asset('frontend/css/bhakta-niwas.css') }}">
+@endpush
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('frontend/css/bhakta-niwas.css') }}">
 
     <div class="bhakta-page-wrapper">
         <div class="container">
@@ -20,14 +19,14 @@
                     Pandharpur, Trimbakeshwar, or Omkareshwar, we provide a clean and peaceful home for your pilgrimage.
                 </p>
                 <div class="header-buttons">
-                    <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20Bhakta%20Niwas%20accommodation."
+                    <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20Bhakta%20Niwas%20accommodation.') }}"
                         target="_blank" class="btn-hero btn-wa">
                         <i class="fab fa-whatsapp"></i> Book via WhatsApp
                     </a>
                     <a href="{{ route('booking') }}" class="btn-hero btn-orange">
                         <i class="fas fa-paper-plane"></i> Submit Request
                     </a>
-                    <a href="tel:+919523016487" class="btn-hero btn-orange">
+                    <a href="{{ seo_phone_tel() }}" class="btn-hero btn-orange">
                         <i class="fas fa-phone"></i> Call to Reserve
                     </a>
                 </div>
@@ -200,7 +199,7 @@
                     <div class="col-md-4 step-item">
                         <div class="step-number">2</div>
                         <h5>Reach Out via WhatsApp or Phone</h5>
-                        <p>Contact the Sansthan office at <strong>+919523016487</strong> through WhatsApp or a direct call. Provide your location preference, dates, and the number of guests.</p>
+                        <p>Contact the Sansthan office at <strong>+91{{ seo_phone() }}</strong> through WhatsApp or a direct call. Provide your location preference, dates, and the number of guests.</p>
                     </div>
                     <div class="col-md-4 step-item">
                         <div class="step-number">3</div>
@@ -309,18 +308,15 @@
                 </details>
 
                 <details class="faq-item-custom">
-                    <summary>What are the room categories and suggested donations at the main Shegaon Bhakt Niwas?</summary>
-                    <div class="faq-answer-custom">At the main Bhakt Niwas Shegaon, we offer: 2‑Bed AC (₹1,650), 2‑Bed Non‑AC (₹1,250), 3‑Bed AC (₹2,050), 3‑Bed Non‑AC (₹1,750), 4‑Bed AC (₹2,550), 4‑Bed Non‑AC (₹2,250), Deluxe Suite (₹3,150), Luxury Suite (₹4,150), and Family Room (₹3,850). These are suggested donation amounts and include all meals, hot water, and taxes – no hidden charges.</div>
+                    <summary>What are the room categories and suggested donations at the main Shegaon Bhakt Niwas?</summary><div class="faq-answer-custom">Room options at Shegaon Bhakta Niwas include Non-AC Rooms, AC Rooms, and Family Suites. Room rates are nominal donation-based contributions. Please contact our helpline on WhatsApp for current availability and room tariffs.</div>
                 </details>
 
                 <details class="faq-item-custom">
-                    <summary>What are the suggested donation rates for rooms at Shegaon?</summary>
-                    <div class="faq-answer-custom">Prices (as donations) start from ₹1,250 for a 2‑bed non‑AC and go up to ₹4,150 for a Luxury Suite. AC options are available from ₹1,650. Every room rate includes meals and hot water. There is no mandatory fee – you choose the amount.</div>
+                    <summary>What are the suggested donation rates for rooms at Shegaon?</summary><div class="faq-answer-custom">Accommodation operates on a nominal donation model to support temple services and pilgrim facilities. Contact the booking office directly for current suggested tariffs per room category.</div>
                 </details>
 
                 <details class="faq-item-custom">
-                    <summary>Are air‑conditioned rooms available at Bhakta Niwas Shegaon?</summary>
-                    <div class="faq-answer-custom">Yes, we have AC rooms: 2‑Bed AC (₹1,650), 3‑Bed AC (₹2,050), 4‑Bed AC (₹2,550), Deluxe Suite (₹3,150), Luxury Suite (₹4,150), and Family Room (₹3,850). AC units are also available at Anand Vihar. We recommend early booking for AC rooms, especially during peak seasons.</div>
+                    <summary>Are air‑conditioned rooms available at Bhakta Niwas Shegaon?</summary><div class="faq-answer-custom">Yes, air-conditioned rooms and suites are available at Shegaon Bhakta Niwas and Anand Vihar. Early booking via WhatsApp is recommended, especially during peak pilgrimage periods.</div>
                 </details>
 
                 <details class="faq-item-custom">
@@ -330,7 +326,7 @@
 
                 <details class="faq-item-custom">
                     <summary>What is the WhatsApp number for booking at Shegaon?</summary>
-                    <div class="faq-answer-custom">You can reach our booking team on WhatsApp at <strong>+919523016487</strong>. Send us your preferred location, check‑in/out dates, and the number of guests – we will reply with confirmation.</div>
+                    <div class="faq-answer-custom">You can reach our booking team on WhatsApp at <strong>+91{{ seo_phone() }}</strong>. Send us your preferred location, check‑in/out dates, and the number of guests – we will reply with confirmation.</div>
                 </details>
 
                 <details class="faq-item-custom">
@@ -340,7 +336,7 @@
 
                 <details class="faq-item-custom">
                     <summary>How do I book for Ashadhi Ekadashi at Pandharpur?</summary>
-                    <div class="faq-answer-custom">For Ashadhi Ekadashi, we recommend booking several months in advance. Contact our office at +919523016487 via WhatsApp or call. Rooms are allocated on a first‑come, first‑served basis, and they fill up quickly due to high demand.</div>
+                    <div class="faq-answer-custom">For Ashadhi Ekadashi, we recommend booking several months in advance. Contact our office at +91{{ seo_phone() }} via WhatsApp or call. Rooms are allocated on a first‑come, first‑served basis, and they fill up quickly due to high demand.</div>
                 </details>
 
                 <details class="faq-item-custom">
@@ -349,8 +345,7 @@
                 </details>
 
                 <details class="faq-item-custom">
-                    <summary>What are the darshan timings at the Shegaon temple?</summary>
-                    <div class="faq-answer-custom">The temple is open for darshan in two sessions: Morning 5:00 AM – 12:00 PM (Kakad Aarti at 5:00 AM, Madhyan Aarti ~11:30 AM) and Evening 4:00 PM – 10:00 PM (Saptashringi Aarti ~4:00 PM, Shej Aarti ~9:30 PM). The temple remains closed from 12:00 PM to 4:00 PM for the afternoon break. It is open every day of the year.</div>
+                    <summary>What are the darshan timings at the Shegaon temple?</summary><div class="faq-answer-custom">Temple darshan is open daily for devotees. Timings and aarti schedules may vary on festival days. Please check with the booking office or on the Darshan Timings page for confirmed daily schedules.</div>
                 </details>
 
                 <details class="faq-item-custom">
@@ -370,7 +365,7 @@
 
                 <details class="faq-item-custom">
                     <summary>How do I book specifically at the Shegaon Bhakt Niwas?</summary>
-                    <div class="faq-answer-custom">Use the booking request form on our site, then contact +919523016487 via WhatsApp or phone. Provide your preferred dates and guest count – the office will confirm availability and complete your reservation.</div>
+                    <div class="faq-answer-custom">Use the booking request form on our site, then contact +91{{ seo_phone() }} via WhatsApp or phone. Provide your preferred dates and guest count – the office will confirm availability and complete your reservation.</div>
                 </details>
 
                 <details class="faq-item-custom">

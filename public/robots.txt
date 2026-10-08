@@ -1,4 +1,23 @@
 User-agent: *
-Disallow:
 
-Sitemap: https://gajananmaharajsansthanbhaktnivas.com/sitemap.xml
+# Allow all public content
+Allow: /
+Allow: /frontend/css/
+Allow: /frontend/images/
+Allow: /frontend/
+
+# Disallow admin and auth areas
+Disallow: /admin/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /verify-email
+Disallow: /confirm-password
+Disallow: /profile
+
+# Disallow raw upload paths (individual file access)
+Disallow: /uploads/
+
+Sitemap: https://www.shegaondharamshala.in/sitemap.xml

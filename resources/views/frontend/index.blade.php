@@ -1,16 +1,25 @@
 @extends('frontend.layouts.master')
 
-@section('meta_title', $meta_title)
-@section('meta_description', $meta_description)
-@section('meta_keywords', $meta_keywords)
-
 @section('content')
+
+@push('swiper-css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+@endpush
+
+@push('page-css')
+<link rel="stylesheet" href="{{ asset('frontend/css/about.css') }}">
+@endpush
+
+{{-- Bell button only on homepage --}}
+@push('bell-button')
+<button id="bellToggleBtn" class="bell-sound ms-2 me-lg-3" type="button" aria-label="Toggle bell sound">
+    <i class="bell-icon bx bx-bell" style="color: #fff;" aria-hidden="true"></i>
+</button>
+@endpush
+
     <section class="hero-swiper-container">
-        <!-- Sound Bell Button -->
-        <button id="bellToggleBtn" class="bell-sound ms-2 me-lg-3" type="button">
-            <i class="bell-icon bx bx-bell" style="color: #fff;"></i>
-        </button>
         <div class="swiper myHeroSwiper hero-swiper">
+
             <div class="swiper-wrapper">
                 <div class="swiper-slide hero-slide"
                     style="background-image: url({{ asset('frontend/images/temple1.jpg') }})">
@@ -18,16 +27,16 @@
                         <div class="hero-badge">
                             <i class="fas fa-om me-2"></i> Official Pilgrim Centre
                         </div>
-                        {{-- Only one H1 on the page --}}
-                        <h1 class="hero-title">Shri Gajanan Maharaj Sansthan</h1>
+                        {{-- Primary H1 with main commercial keyword --}}
+                        <h1 class="hero-title">Shegaon Bhakta Niwas<br>Room Booking</h1>
                         <p class="hero-desc">
                             A sacred sanctuary of devotion and peace. Plan your visit for darshan and experience comfortable
                             hospitality at our Bhakta Niwas.
                         </p>
                         <div class="hero-buttons d-flex flex-wrap justify-content-center gap-3">
-                            <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20accommodation%20and%20darshan%20at%20Shri%20Gajanan%20Maharaj%20Sansthan."
+                            <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20know%20more%20about%20accommodation%20and%20darshan%20at%20Shri%20Gajanan%20Maharaj%20Sansthan.') }}"
                                 target="_blank" class="btn-hero btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Booking</a>
-                            <a href="tel:+919523016487" class="btn-hero btn-orange"><i class="fas fa-phone"></i> Call
+                            <a href="{{ seo_phone_tel() }}" class="btn-hero btn-orange"><i class="fas fa-phone"></i> Call
                                 Now</a>
                         </div>
                     </div>
@@ -61,9 +70,9 @@
                 <!--            spiritual programs.-->
                 <!--        </p>-->
                 <!--        <div class="hero-buttons d-flex flex-wrap justify-content-center gap-3">-->
-                <!--            <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20accommodation%20and%20darshan%20at%20Shri%20Gajanan%20Maharaj%20Sansthan."-->
+                <!--            <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20know%20more%20about%20accommodation%20and%20darshan%20at%20Shri%20Gajanan%20Maharaj%20Sansthan.') }}"-->
                 <!--                target="_blank" class="btn-hero btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Booking</a>-->
-                <!--            <a href="tel:+919523016487" class="btn-hero btn-orange"><i class="fas fa-phone"></i> Call-->
+                <!--            <a href="{{ seo_phone_tel() }}" class="btn-hero btn-orange"><i class="fas fa-phone"></i> Call-->
                 <!--                Now</a>-->
                 <!--        </div>-->
                 <!--    </div>-->
@@ -85,10 +94,10 @@
                         Welcome to Gajanan Maharaj Sansthan 
                     </h2>
                     <p class="text-secondary mb-4" style="line-height: 1.8; font-size: 1.05rem">
-                        Gajanan Maharaj Sansthan focuses on helping devotees and keeping the traditions of Gajanan Maharaj alive. It is in Shegaon. The Sansthan gives a place where devotees can pray ask for blessings and spend time in a spiritual setting.
+                        Shri Gajanan Maharaj Sansthan, established in Shegaon in 1908, is the official trust dedicated to the memory of Sant Gajanan Maharaj. The Sansthan manages the main temple at Shegaon and provides accommodation (Bhakta Niwas), daily mahaprasad, and pilgrimage services to millions of devotees each year.
                     </p>
                     <p class="text-secondary mb-5" style="line-height: 1.8; font-size: 1.05rem">
-                       The Sansthan cares about devotion helping others following rules and making sure devotees are happy and well. For people who come to Shegaon the Sansthan is very important in making their trip easy and well-organized. 
+                        Whether you are visiting for the first time or returning for your annual yatra, the Sansthan ensures your stay is comfortable, affordable and spiritually fulfilling. Bhakta Niwas rooms, free bus service from the railway station, and the Bhojan Kaksha (community dining hall) are all available for devotees.
                     </p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="{{ route('about') }}" class="btn-hero btn-orange"><i class="fas fa-arrow-right"></i> Know
@@ -103,7 +112,7 @@
                 border-radius: 4px;
                 box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
               ">
-                        <img src="{{ asset('frontend/images/temple1.jpg') }}" class="img-fluid w-100" alt="About"
+                        <img src="{{ asset('frontend/images/temple1.jpg') }}" class="img-fluid w-100" alt="Shri Gajanan Maharaj Sansthan Shegaon - temple complex"
                             style="height: 450px; object-fit: cover" />
                     </div>
                 </div>
@@ -111,68 +120,51 @@
         </div>
     </section>
     
-     <!-- ==================== NEW SEO CONTENT SECTION ==================== -->
-    <section class="section-gap" style="background: #fff;">
+    <!-- Informational SEO section: answers real searcher questions -->
+    <section class="section-gap" style="background: #fff;" aria-labelledby="booking-guide-heading">
         <div class="container">
-            <h2 class="section-title-main display-5 fw-bold">
-                Shegaon Bhakta Niwas Booking | Room Rent & Affordable Stay
+            <h2 id="booking-guide-heading" class="section-title-main display-5 fw-bold">
+                Shegaon Bhakta Niwas Room Booking - Complete Guide
             </h2>
             <p class="section-desc-main">
-                Complete guide for booking your stay at Shegaon Bhakta Niwas, including room rent, availability, and facilities.
+                Everything you need to know before booking accommodation at Shri Gajanan Maharaj Sansthan, Shegaon.
             </p>
 
             <div class="seo-content mt-5">
-                <!-- Shegaon Bhakta Niwas Room Booking: Complete for Guests -->
-                <h3 class="fw-bold text-center mb-3" style="color: var(--theme-maroon);">Shegaon Bhakta Niwas Room Booking | Complete for Guests</h3>
+                <h3 class="fw-bold mb-3" style="color: var(--theme-maroon);">How to Book a Room at Shegaon Bhakta Niwas</h3>
                 <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    Room booking in Shegaon Bhakta Niwas should be regarded as an important factor to organize a comfortable stay in the city.
-                    Many pilgrims prefer to make a reservation for their accommodation in order to enjoy their visit and exploration of the territory
-                    without having any difficulties that might arise from not enough time to find homestay.
+                    Shegaon Bhakta Niwas room booking is handled directly by Shri Gajanan Maharaj Sansthan.
+                    Devotees can book by sending a WhatsApp message or calling our booking helpline with their
+                    travel dates, number of guests and preferred room type. Advance booking is recommended,
+                    especially during major festivals and the Shravan month when footfall at Shegaon is highest.
                 </p>
                 <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    Prior to making reservations for rooms, you have to consider the type of the quarter, the number of guests, check-in and check-out
-                    requirements, and the corresponding fees. While families would require larger space, individual travelers might prefer more modest
-                    and inexpensive rooms. Older travelers might appreciate stays that provide easy access to the important places of the city.
-                </p>
-                <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    It is also helpful to check the current booking policies before making reservations. Room occupancy and prices could differ
-                    depending on the season. Planned booking will make your visit to the temple easier.
+                    To confirm your reservation, keep a government-issued photo ID ready (Aadhaar, Voter ID or
+                    passport). Once confirmed, you will receive booking details to present at check-in.
+                    Valid photo identification is mandatory for all guests at check-in.
                 </p>
 
-                <!-- How to Book Shegaon Bhakta Niwas Room Online Easily -->
-                <h3 class="fw-bold text-center mt-5 mb-3" style="color: var(--theme-maroon);">How to Book Shegaon Bhakta Niwas Room Online Easily</h3>
+                <h3 class="fw-bold mt-5 mb-3" style="color: var(--theme-maroon);">Shegaon Bhakta Niwas Room Rent and Price List</h3>
                 <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    Travellers who prefer digital booking may want to book Shegaon Bhakta Niwas room online before starting their journey.
-                    Online booking can be convenient because guests can check information from home and plan their residence along with travel arrangements.
+                    Room categories include dormitory-style beds (per person), standard non-AC rooms and AC rooms.
+                    All rooms include three meals - breakfast, lunch and dinner - served fresh daily by the Sansthan's Bhojan Kaksha (canteen).
                 </p>
                 <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    The first thing to do is to get the official website or authorized booking site for the stay facility. Ensure that you are getting
-                    information about the room, availability, booking policies, and charges. Provide the correct date of your arrival and departure at the quarters.
-                    Also, provide the right number of guests so that you book the appropriate room. Before making the confirmation of the reservation,
-                    ensure that you look into all the aspects.
+                    Room charges may vary by season and room category. Prices see higher demand during
+                    major festivals such as Gajanan Jayanti, Shravan and Diwali.
+                    Contact the helpline for current availability and rates.
+                </p>
+
+                <h3 class="fw-bold mt-5 mb-3" style="color: var(--theme-maroon);">Booking for Families, Groups and Senior Devotees</h3>
+                <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
+                    Families can choose from double, triple or family rooms depending on group size.
+                    Large yatra groups of 10 or more guests should contact us early, as group blocks
+                    fill quickly around pilgrimage season. Senior citizens and guests with mobility concerns
+                    are accommodated on ground floors on request.
                 </p>
                 <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    Make sure you know the category of the room, the price, cancellation policy, identification requirements, and check-in process.
-                    You need to keep a copy of the booking confirmation after you have made your reservation. It would be wise to book your reservation
-                    ahead of time. This enables you to have a hassle-free travel experience since the facility might book up during those days.
-                </p>
-                
-                <!-- Shegaon Bhakta Niwas Booking Process for Devotees & Families -->
-                <h3 class="fw-bold text-center mt-5 mb-3" style="color: var(--theme-maroon);">Shegaon Bhakta Niwas Booking Process for Devotees & Families</h3>
-                <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    The Shegaon Bhakta Niwas booking process should be simple and clear for every guest. Whether you are travelling alone or with your family,
-                    understanding the basic steps can make the reservation easier.
-                </p>
-                <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    First, decide your travel dates and estimate how many people will stay in the room. Next, check whether rooms are available for those dates.
-                    Compare the available room options and select one according to your group size and comfort requirements. After selecting the room,
-                    provide the required guest details. Make sure your name, contact information, arrival date, and departure date are entered correctly.
-                    If identification documents are required, keep them ready for the booking or check-in process.
-                </p>
-                <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                    Before final confirmation, carefully review the total charges and booking conditions. Save your confirmation details and carry the required
-                    documents when you travel. Families should also consider their practical needs. If you are travelling with children or elderly family members,
-                    ask about suitable facilities before booking. A clear booking process helps avoid confusion and gives guests better control over their travel plans.
+                    The Sansthan's free bus service runs between Shegaon Railway Station and the temple
+                    complex, making travel easy even without a personal vehicle.
                 </p>
             </div>
         </div>
@@ -244,7 +236,7 @@
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <strong>Official Site</strong><br /><span class="small opacity-75">Always use
-                                        <code style="color:#fff;">www.sgmshegaon.com</code> for all
+                                        <code style="color:#fff;">{{ request()->getHost() }}</code> for all
                                         sansthan related info.</span>
                                 </div>
                             </li>
@@ -259,8 +251,9 @@
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <strong>Multiple Locations</strong><br /><span class="small opacity-75">Services
-                                        available in Shegaon, Faizabad, Gonda, and
-                                        Amravati.</span>
+                                        available in Shegaon, Pandharpur, Trimbakeshwar and
+                                        Omkareshwar.</span>
+
                                 </div>
                             </li>
                         </ul>
@@ -429,7 +422,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-card">
                         <div class="service-icon"><i class="fas fa-bus"></i></div>
-                        <h5>Free Bus Service</h5>
+                        <h5>Station Bus Shuttle</h5>
                         <p>
                             Complimentary transport between Railway Station, Bhakta Niwas,
                             and Temple for devotee convenience.
@@ -473,7 +466,7 @@
                 <small class="mt-1 d-block">All prices include: Room accommodation + All meals (Breakfast,
                     Lunch, Dinner) + Applicable taxes + Hot water facilities<br />
                     <strong>No hidden charges. Final price is exactly as shown.</strong>
-                    Check-in: 24 Hours | Check-out: 24 Hours</small>
+                    @if(fact('check_in_time')) Check-in: {{ fact('check_in_time') }} | Check-out: {{ fact('check_out_time') }} @endif</small>
             </div>
 
             <!-- CSS for room badges -->
@@ -765,7 +758,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'shegaon-bhakt-niwas']) }}" class="btn-explore">Explore <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Shegaon."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Shegaon.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>
@@ -783,7 +776,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'pandharpur']) }}" class="btn-explore">Explore <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Pandharpur."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Pandharpur.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>
@@ -801,7 +794,7 @@
                             </p>
                             <div class="loc-buttons">
                                 <a href="{{ route('location-detail', ['slug' => 'shegaon-anand-vihar']) }}" class="btn-explore">Explore <i class="fas fa-arrow-right ms-1"></i></a>
-                                <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Anand%20Vihar."
+                                <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20accommodation%20at%20Shri%20Gajanan%20Maharaj%20Sansthan%20Anand%20Vihar.') }}"
                                     target="_blank" class="btn-book-loc"><i class="fab fa-whatsapp me-1"></i> Book Now</a>
                             </div>
                         </div>
@@ -846,10 +839,10 @@
                 stay before they travel. Save the location on your phone and keep your booking details ready.
             </p>
 
-            <!-- Best Time to Book Shegaon Bhakta Niwas for Your Visit -->
-            <h3 class="fw-bold text-center mt-5 mb-3" style="color: var(--theme-maroon);">Best Time to Book Shegaon Bhakta Niwas for Your Visit</h3>
+            <!-- Planning Your Stay at Shegaon Bhakta Niwas for Your Visit -->
+            <h3 class="fw-bold text-center mt-5 mb-3" style="color: var(--theme-maroon);">Planning Your Stay at Shegaon Bhakta Niwas for Your Visit</h3>
             <p class="text-secondary" style="line-height: 1.8; font-size: 1.05rem;">
-                The best time to make a booking for Shegaon depends on when you're going to Shegaon and how many people are going to be there. If you are going to Shegaon
+                When planning your accommodation booking for Shegaon depends on when you're going to Shegaon and how many people are going to be there. If you are going to Shegaon
                 during a festival or on a weekend or public holiday you should plan ahead. When a lot of people are going to Shegaon it can be hard to find a place to stay.
                 That is why it is a good idea to book early. Booking early gives you time to look at all the rooms that are available and pick the one that is right for you.
             </p>
@@ -1166,12 +1159,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Best Time to Visit -->
+                <!-- Ideal Seasons to Visit -->
                 <div class="col-lg-6">
                     <div class="plan-card">
                         <h5>
                             <i class="far fa-calendar-alt text-warning" style="color: var(--theme-orange)"></i>
-                            Best Time to Visit
+                            Ideal Seasons to Visit
                         </h5>
                         <div class="plan-item">
                             <div>
@@ -1209,7 +1202,7 @@
                             <h6>By Train</h6>
                             <p>
                                 Shegaon Railway Station is well-connected to major cities.
-                                Free bus service available from station to temple.
+                                Sansthan bus shuttle available from station to temple.
                             </p>
                         </div>
                     </div>
@@ -1285,7 +1278,7 @@
                             </li>
                             <li>
                                 <i class="fas fa-circle" style="font-size: 6px; margin-top: 8px"></i>
-                                Free Wi-Fi available at main complex
+                                Wi-Fi facilities available at main complex
                             </li>
                         </ul>
                     </div>
@@ -1316,7 +1309,7 @@
                     Gajanan Maharaj.
                 </p>
                 <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 position-relative z-2">
-                    <a href="https://wa.me/919523016487?text=Hi%2C%20I%20would%20like%20to%20book%20my%20stay%20at%20Shri%20Gajanan%20Maharaj%20Sansthan."
+                    <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20book%20my%20stay%20at%20Shri%20Gajanan%20Maharaj%20Sansthan.') }}"
                         target="_blank" class="btn-cta-wa"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
                     <a href="{{ route('booking') }}" class="btn-cta-outline"><i class="fas fa-paper-plane"></i> Send
                         Booking Request</a>
@@ -1400,4 +1393,40 @@
             statNumbers.forEach(el => observer.observe(el));
         });
     </script>
+
+@push('swiper-js')
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.myHeroSwiper')) {
+        new Swiper('.myHeroSwiper', {
+            loop: true,
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            speed: 1000,
+        });
+    }
+});
+</script>
+@endpush
+
+@push('page-js')
+<script>
+// GA4 click tracking for WhatsApp and Call CTAs
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+        if (window.trackWhatsApp) window.trackWhatsApp();
+    });
+});
+document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+        if (window.trackCall) window.trackCall();
+    });
+});
+</script>
+@endpush
+
 @endsection
