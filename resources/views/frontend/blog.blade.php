@@ -135,13 +135,13 @@
                             $topcs = is_array($blog->topics) ? $blog->topics : (is_string($blog->topics) ? json_decode($blog->topics, true) ?? explode(',', $blog->topics) : []);
                             $cats = array_filter(array_map('trim', (array)$cats));
                             $topcs = array_filter(array_map('trim', (array)$topcs));
-                            $imgSrc = !empty($blog->image) ? asset($blog->image) : asset('frontend/images/loc2.jpg');
+                            $imgSrc = optimized_image_url($blog->image, 'frontend/images/loc2.webp');
                         @endphp
                         <div class="col-lg-4 col-md-6">
                             <div class="blog-card d-flex flex-column h-100">
                                 <div class="blog-card-img-wrapper">
                                     <a href="{{ route('blog.detail', $blog->slug) }}">
-                                        <img src="{{ $imgSrc }}" alt="{{ $blog->title }}" loading="lazy" />
+                                        <img src="{{ $imgSrc }}" alt="{{ $blog->title }}" loading="lazy" decoding="async" />
                                     </a>
                                 </div>
 

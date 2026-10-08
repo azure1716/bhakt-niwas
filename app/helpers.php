@@ -74,3 +74,25 @@ if (!function_exists('fact')) {
         return config('facts.' . $key, $default);
     }
 }
+
+if (!function_exists('optimized_image_url')) {
+    /**
+     * Return the WebP version of an image if available on disk,
+     * otherwise fall back to the original image path.
+     */
+    function optimized_image_url(?string $path, string $fallback = 'frontend/images/loc2.jpg'): string
+    {
+        if (empty($path)) {
+            return asset($fallback);
+        }
+
+        $decoded = urldecode($path);
+        $webpPath = preg_replace('/\.(png|jpe?g)$/i', '.webp', $decoded);
+
+        if ($webpPath !== $decoded && file_exists(public_path($webpPath))) {
+            return asset($webpPath);
+        }
+
+        return asset($path);
+    }
+}

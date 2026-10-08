@@ -2,85 +2,35 @@
 
 @section('content')
 
-@push('swiper-css')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-@endpush
-
-@push('page-css')
-<link rel="stylesheet" href="{{ asset('frontend/css/about.css') }}">
-@endpush
-
 {{-- Bell button only on homepage --}}
 @push('bell-button')
 <button id="bellToggleBtn" class="bell-sound ms-2 me-lg-3" type="button" aria-label="Toggle bell sound">
-    <i class="bell-icon bx bx-bell" style="color: #fff;" aria-hidden="true"></i>
+    <i class="bell-icon fas fa-bell" style="color: #fff;" aria-hidden="true"></i>
 </button>
 @endpush
 
     <section class="hero-swiper-container">
-        <div class="swiper myHeroSwiper hero-swiper">
-
-            <div class="swiper-wrapper">
-                <div class="swiper-slide hero-slide"
-                    style="background-image: url({{ asset('frontend/images/temple1.jpg') }})">
-                    <div class="container hero-content">
-                        <div class="hero-badge">
-                            <i class="fas fa-om me-2"></i> Official Pilgrim Centre
-                        </div>
-                        {{-- Primary H1 with main commercial keyword --}}
-                        <h1 class="hero-title">Shegaon Bhakta Niwas<br>Room Booking</h1>
-                        <p class="hero-desc">
-                            A sacred sanctuary of devotion and peace. Plan your visit for darshan and experience comfortable
-                            hospitality at our Bhakta Niwas.
-                        </p>
-                        <div class="hero-buttons d-flex flex-wrap justify-content-center gap-3">
-                            <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20know%20more%20about%20accommodation%20and%20darshan%20at%20Shri%20Gajanan%20Maharaj%20Sansthan.') }}"
-                                target="_blank" class="btn-hero btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Booking</a>
-                            <a href="{{ seo_phone_tel() }}" class="btn-hero btn-orange"><i class="fas fa-phone"></i> Call
-                                Now</a>
-                        </div>
+        <div class="hero-swiper">
+            <div class="hero-slide"
+                style="background-image: url({{ asset('frontend/images/temple1.jpg') }})">
+                <div class="container hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-om me-2"></i> Official Pilgrim Centre
+                    </div>
+                    {{-- Primary H1 with main commercial keyword --}}
+                    <h1 class="hero-title">Shegaon Bhakta Niwas<br>Room Booking</h1>
+                    <p class="hero-desc">
+                        A sacred sanctuary of devotion and peace. Plan your visit for darshan and experience comfortable
+                        hospitality at our Bhakta Niwas.
+                    </p>
+                    <div class="hero-buttons d-flex flex-wrap justify-content-center gap-3">
+                        <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20know%20more%20about%20accommodation%20and%20darshan%20at%20Shri%20Gajanan%20Maharaj%20Sansthan.') }}"
+                            target="_blank" class="btn-hero btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Booking</a>
+                        <a href="{{ seo_phone_tel() }}" class="btn-hero btn-orange"><i class="fas fa-phone"></i> Call
+                            Now</a>
                     </div>
                 </div>
-                <!--<div class="swiper-slide hero-slide"-->
-                <!--    style="background-image: url({{ asset('frontend/images/temple2.jpg') }})">-->
-                <!--    <div class="container hero-content">-->
-                <!--        <div class="hero-badge">-->
-                <!--            <i class="fas fa-om me-2"></i> Darshan & Stay-->
-                <!--        </div>-->
-                <!--        <h2 class="hero-title">Reserve Your Bhakta Niwas Room</h2>-->
-                <!--        <p class="hero-desc">-->
-                <!--            Well‑maintained, tranquil accommodation right beside the temple. Stay with us and find inner-->
-                <!--            solace.-->
-                <!--        </p>-->
-                <!--        <div class="hero-buttons d-flex flex-wrap justify-content-center gap-3">-->
-                <!--            <a href="{{ route('booking') }}" class="btn-hero btn-orange"><i class="fas fa-bed"></i> Check-->
-                <!--                Room Availability</a>-->
-                <!--        </div>-->
-                <!--    </div>-->
-                <!--</div>-->
-                <!--<div class="swiper-slide hero-slide"-->
-                <!--    style="background-image: url({{ asset('frontend/images/temple3.jpg') }})">-->
-                <!--    <div class="container hero-content">-->
-                <!--        <div class="hero-badge">-->
-                <!--            <i class="fas fa-om me-2"></i> Spiritual Journey-->
-                <!--        </div>-->
-                <!--        <h2 class="hero-title">Awaken Your Inner Self</h2>-->
-                <!--        <p class="hero-desc">-->
-                <!--            Join countless devotees in experiencing the divine blessings of Shri Gajanan Maharaj through our-->
-                <!--            spiritual programs.-->
-                <!--        </p>-->
-                <!--        <div class="hero-buttons d-flex flex-wrap justify-content-center gap-3">-->
-                <!--            <a href="{{ seo_whatsapp_url('Hi%2C%20I%20would%20like%20to%20know%20more%20about%20accommodation%20and%20darshan%20at%20Shri%20Gajanan%20Maharaj%20Sansthan.') }}"-->
-                <!--                target="_blank" class="btn-hero btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Booking</a>-->
-                <!--            <a href="{{ seo_phone_tel() }}" class="btn-hero btn-orange"><i class="fas fa-phone"></i> Call-->
-                <!--                Now</a>-->
-                <!--        </div>-->
-                <!--    </div>-->
-                <!--</div>-->
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
@@ -113,7 +63,7 @@
                 box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
               ">
                         <img src="{{ asset('frontend/images/temple1.jpg') }}" class="img-fluid w-100" alt="Shri Gajanan Maharaj Sansthan Shegaon - temple complex"
-                            style="height: 450px; object-fit: cover" />
+                            style="height: 450px; object-fit: cover" loading="lazy" decoding="async" />
                     </div>
                 </div>
             </div>
@@ -490,8 +440,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room1.jpg') }}" alt="Room 1"
-                                class="room-img" />
+                            <img src="{{ asset('frontend/images/room1.webp') }}" alt="Room 1"
+                                class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge">AC</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -511,7 +461,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room2.jpg') }}" alt="Room 2" class="room-img" />
+                            <img src="{{ asset('frontend/images/room2.webp') }}" alt="Room 2" class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge non-ac">Non-AC</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -531,8 +481,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room3.jpg') }}" alt="Room 3"
-                                class="room-img" />
+                            <img src="{{ asset('frontend/images/room3.webp') }}" alt="Room 3"
+                                class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge">AC</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -552,8 +502,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room4.jpg') }}" alt="Room 4"
-                                class="room-img" />
+                            <img src="{{ asset('frontend/images/room4.webp') }}" alt="Room 4"
+                                class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge non-ac">Non-AC</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -573,7 +523,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room5.jpg') }}" alt="Room 5" class="room-img" />
+                            <img src="{{ asset('frontend/images/room5.webp') }}" alt="Room 5" class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge">AC</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -593,7 +543,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room6.jpg') }}" alt="Room 6" class="room-img" />
+                            <img src="{{ asset('frontend/images/room6.webp') }}" alt="Room 6" class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge non-ac">Non-AC</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -613,7 +563,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room7.jpg') }}" alt="Room 7" class="room-img" />
+                            <img src="{{ asset('frontend/images/room7.webp') }}" alt="Room 7" class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge deluxe">Deluxe</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -633,7 +583,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room8.jpg') }}" alt="Room 8" class="room-img" />
+                            <img src="{{ asset('frontend/images/room8.webp') }}" alt="Room 8" class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge luxury">Luxury</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -653,7 +603,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-card">
                         <div class="position-relative">
-                            <img src="{{ asset('frontend/images/room9.jpg') }}" alt="Room 9" class="room-img" />
+                            <img src="{{ asset('frontend/images/room9.webp') }}" alt="Room 9" class="room-img" loading="lazy" decoding="async" />
                             <span class="room-badge family">Family</span>
                             <span class="room-meal-badge"><i class="fas fa-utensils me-1"></i> Breakfast, lunch & dinner
                                 included</span>
@@ -750,7 +700,7 @@
                 <!-- Location 1: Shegaon -->
                 <div class="col-lg-4 col-md-6">
                     <div class="location-card">
-                        <img src="{{ asset('frontend/images/loc2.jpg') }}" alt="Shegaon Bhakt Niwas" class="loc-img" />
+                        <img src="{{ asset('frontend/images/loc2.webp') }}" alt="Shegaon Bhakt Niwas" class="loc-img" loading="lazy" decoding="async" />
                         <div class="loc-body">
                             <h5>Shri Gajanan Maharaj Sansthan Shegaon Bhakt Niwas</h5>
                             <p>
@@ -768,7 +718,7 @@
                 <!-- Location 2: Pandharpur -->
                 <div class="col-lg-4 col-md-6">
                     <div class="location-card">
-                        <img src="{{ asset('frontend/images/location1.jpg') }}" alt="Pandharpur Bhakt Niwas" class="loc-img" />
+                        <img src="{{ asset('frontend/images/location1.webp') }}" alt="Pandharpur Bhakt Niwas" class="loc-img" loading="lazy" decoding="async" />
                         <div class="loc-body">
                             <h5>Shri Gajanan Maharaj Sansthan Pandharpur Bhakt Niwas</h5>
                             <p>
@@ -786,7 +736,7 @@
                 <!-- Location 3: Anand Vihar -->
                 <div class="col-lg-4 col-md-6">
                     <div class="location-card">
-                        <img src="{{ asset('frontend/images/loc3.jpg') }}" alt="Anand Vihar Shegaon" class="loc-img" />
+                        <img src="{{ asset('frontend/images/loc3.webp') }}" alt="Anand Vihar Shegaon" class="loc-img" loading="lazy" decoding="async" />
                         <div class="loc-body">
                             <h5>Shri Gajanan Maharaj Sansthan Shegaon Anand Vihar</h5>
                             <p>
@@ -1394,24 +1344,7 @@
         });
     </script>
 
-@push('swiper-js')
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    if (document.querySelector('.myHeroSwiper')) {
-        new Swiper('.myHeroSwiper', {
-            loop: true,
-            autoplay: { delay: 5000, disableOnInteraction: false },
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            effect: 'fade',
-            fadeEffect: { crossFade: true },
-            speed: 1000,
-        });
-    }
-});
-</script>
-@endpush
+
 
 @push('page-js')
 <script>

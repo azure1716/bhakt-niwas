@@ -2,10 +2,12 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class SeoRouteTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * Test 301 redirects for legacy URLs.
      */
@@ -136,5 +138,29 @@ class SeoRouteTest extends TestCase
         $this->assertStringContainsString('hreflang="mr-IN"', $html);
         $this->assertStringContainsString('hreflang="hi-IN"', $html);
         $this->assertStringContainsString('hreflang="x-default"', $html);
+    }
+
+    /**
+     * Test blog search works case-insensitively.
+     */
+    public function test_blog_search_case_insensitive(): void
+    {
+        \App\Models\Blog::create([
+            'title' => 'Shegaon Bhakta Niwas Booking Guide',
+            'slug' => 'test-shegaon-booking-guide',
+            'short_description' => 'Test description for Shegaon pilgrimage stay',
+            'description' => '<p>Detailed guide for Shegaon room booking.</p>',
+            'published_date' => now(),
+            'status' => 'active',
+        ]);
+
+        $responseLower = $this->get('/blog?search=shegaon');
+        $responseLower->assertStatus(200);
+
+        $responseUpper = $this->get('/blog?search=Shegaon');
+        $responseUpper->assertStatus(200);
+
+        $this->assertStringContainsString('class="blog-card', $responseLower->getContent());
+        $this->assertStringContainsString('class="blog-card', $responseUpper->getContent());
     }
 }

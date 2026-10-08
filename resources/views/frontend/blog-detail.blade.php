@@ -11,7 +11,7 @@
     <section class="bd-hero-section bd-hero-section--with-img">
         @if ($blog->image)
         <img
-            src="{{ asset($blog->image) }}"
+            src="{{ optimized_image_url($blog->image) }}"
             alt="{{ $blog->title }}"
             class="bd-hero-bg-img"
             width="1200"

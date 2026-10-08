@@ -26,9 +26,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
 
-    {{-- ===================== Icons (defer via display=block to avoid render-blocking) ===================== --}}
-    {{-- Boxicons --}}
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    {{-- ===================== Icons ===================== --}}
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -127,21 +125,21 @@
 
             {{-- Decorative bell strip (desktop only, trimmed from 66 to 15 elements) --}}
             <div class="nav-jhalar-wrapper d-none d-lg-flex" aria-hidden="true">
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
-                <span class="hanging-bell"><i class="bx bx-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
+                <span class="hanging-bell"><i class="fas fa-bell"></i></span>
             </div>
 
             <div class="container-fluid">

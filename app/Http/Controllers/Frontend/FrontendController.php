@@ -75,7 +75,7 @@ class FrontendController extends Controller
                 ->where('is_homepage', 1)
                 ->orderBy('published_date', 'desc')
                 ->take(6)
-                ->get();
+                ->get(['id', 'title', 'slug', 'short_description', 'published_date', 'categories', 'topics']);
         } catch (\Throwable $e) {
             $homeBlogs = collect();
         }
@@ -189,12 +189,13 @@ class FrontendController extends Controller
             }
         }
 
-        // Search filter
+        // Search filter (case-insensitive across SQLite, MySQL, and PostgreSQL)
         if ($request->filled('search')) {
-            $searchTerm = trim($request->search);
+            $searchTerm = '%' . mb_strtolower(trim($request->search)) . '%';
             $query->where(function ($q) use ($searchTerm) {
-                $q->where('title', 'like', '%' . $searchTerm . '%')
-                    ->orWhere('short_description', 'like', '%' . $searchTerm . '%');
+                $q->whereRaw('LOWER(title) LIKE ?', [$searchTerm])
+                    ->orWhereRaw('LOWER(short_description) LIKE ?', [$searchTerm])
+                    ->orWhereRaw('LOWER(description) LIKE ?', [$searchTerm]);
             });
         }
 

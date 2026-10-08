@@ -48,6 +48,9 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --prefer-di
 # Copy Nginx configuration file
 COPY docker/nginx.conf /etc/nginx/http.d/default.conf
 
+# Copy production OPcache configuration
+COPY docker/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+
 # Set permissions for Laravel storage and uploads
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public/uploads \
     && chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public/uploads

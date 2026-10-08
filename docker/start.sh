@@ -33,12 +33,18 @@ fi
 # Ensure DB_CONNECTION defaults to pgsql
 export DB_CONNECTION=${DB_CONNECTION:-pgsql}
 
+# Ensure high-performance session driver (cookie) to eliminate Supabase roundtrips on every request
+if [ "$SESSION_DRIVER" = "database" ] || [ -z "$SESSION_DRIVER" ]; then
+    export SESSION_DRIVER=cookie
+fi
+
 echo "=== Database Environment ==="
-echo "  DB_CONNECTION: $DB_CONNECTION"
-echo "  DB_HOST:       ${DB_HOST:-not set}"
-echo "  DB_PORT:       ${DB_PORT:-5432}"
-echo "  DB_DATABASE:   ${DB_DATABASE:-not set}"
-echo "  DB_USERNAME:   ${DB_USERNAME:-not set}"
+echo "  DB_CONNECTION:  $DB_CONNECTION"
+echo "  SESSION_DRIVER: $SESSION_DRIVER"
+echo "  DB_HOST:        ${DB_HOST:-not set}"
+echo "  DB_PORT:        ${DB_PORT:-5432}"
+echo "  DB_DATABASE:    ${DB_DATABASE:-not set}"
+echo "  DB_USERNAME:    ${DB_USERNAME:-not set}"
 echo "============================"
 
 # -------------------------------------------------------------
